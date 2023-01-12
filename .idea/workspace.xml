@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89c39086-bff4-4b4f-8fdf-a709ad11443a" name="Changes" comment="ChangeTwo">
+    <list default="true" id="89c39086-bff4-4b4f-8fdf-a709ad11443a" name="Changes" comment="ChangeFive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/DoctorHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/DoctorHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/EditPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/EditPasswordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/PatientHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/PatientHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/ViewHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/ViewHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/components/OneButtonCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/components/OneButtonCellFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/components/OneButtonTableCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/components/OneButtonTableCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddPatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddPatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/DoctorHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/DoctorHomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/PatientHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/PatientHomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/ViewHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/ViewHistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/components/OneButtonCellFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/components/OneButtonCellFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/components/OneButtonTableCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/components/OneButtonTableCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/domain/Patient.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,27 +87,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670231794638</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Edit Patient Info">
-      <created>1672187298769</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1672187298769</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Edit Patient Info">
-      <created>1672187317139</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1672187317139</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Edit Patient Info">
-      <created>1672254624431</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1672254624431</updated>
     </task>
     <task id="LOCAL-00019" summary="Implemented AbstractDao, and Idable Interface">
       <created>1672257411498</created>
@@ -444,7 +410,28 @@
       <option name="project" value="LOCAL" />
       <updated>1673355018289</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="ChangeTree">
+      <created>1673385917801</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1673385917802</updated>
+    </task>
+    <task id="LOCAL-00066" summary="ChangeFour">
+      <created>1673385940704</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1673385940705</updated>
+    </task>
+    <task id="LOCAL-00067" summary="ChangeFive">
+      <created>1673385957307</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1673385957308</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,9 +446,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dorada na domenskim klasama" />
-    <MESSAGE value="Absract Dao" />
-    <MESSAGE value="Add Diagnosis view and controller" />
     <MESSAGE value="AddPatient view and controller" />
     <MESSAGE value="App AppFX" />
     <MESSAGE value="view History and controller" />
@@ -484,6 +468,9 @@
     <MESSAGE value="EditPasswordController finished" />
     <MESSAGE value="ChangeOne" />
     <MESSAGE value="ChangeTwo" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChangeTwo" />
+    <MESSAGE value="ChangeTree" />
+    <MESSAGE value="ChangeFour" />
+    <MESSAGE value="ChangeFive" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChangeFive" />
   </component>
 </project>
