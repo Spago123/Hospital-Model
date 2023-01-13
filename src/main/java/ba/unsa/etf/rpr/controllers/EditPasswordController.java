@@ -1,7 +1,5 @@
 package ba.unsa.etf.rpr.controllers;
 
-import ba.unsa.etf.rpr.App;
-import ba.unsa.etf.rpr.AppFX;
 import ba.unsa.etf.rpr.bussines.DoctorManager;
 import ba.unsa.etf.rpr.bussines.PatientManager;
 import ba.unsa.etf.rpr.domain.Doctor;
@@ -9,15 +7,9 @@ import ba.unsa.etf.rpr.domain.Passwordabel;
 import ba.unsa.etf.rpr.domain.Patient;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /**
  * Ovo radi samo jos povezivanje
@@ -50,9 +42,9 @@ public class EditPasswordController<Type extends Passwordabel> {
         try {
             user.setPassword(newPass.getText());
             if (ifDoctor()) {
-                doctorManager.updateDoctor((Doctor) user);
+                doctorManager.update((Doctor) user);
             } else if (ifPatient()) {
-                patientManager.updatePatient((Patient) user);
+                patientManager.update((Patient) user);
             }
         } catch (HospitalException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

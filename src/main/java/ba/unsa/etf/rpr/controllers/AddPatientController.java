@@ -1,8 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
-import ba.unsa.etf.rpr.AppFX;
 import ba.unsa.etf.rpr.bussines.PatientManager;
-import ba.unsa.etf.rpr.domain.Department;
 import ba.unsa.etf.rpr.domain.Doctor;
 import ba.unsa.etf.rpr.domain.Patient;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
@@ -10,8 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.awt.event.ActionEvent;
 
 public class AddPatientController {
 
@@ -40,7 +36,7 @@ public class AddPatientController {
     }
 
     public void addBtn(javafx.event.ActionEvent actionEvent) throws HospitalException {
-        patientManager.addPatient(new Patient(1, patientsName.getText(), patientsPassword.getText(),Long.parseLong(patientsUIN.getText()), doctor));
+        patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(),Long.parseLong(patientsUIN.getText()), doctor));
         new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
     }
 }

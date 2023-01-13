@@ -1,7 +1,5 @@
 package ba.unsa.etf.rpr.controllers;
 
-import ba.unsa.etf.rpr.App;
-import ba.unsa.etf.rpr.AppFX;
 import ba.unsa.etf.rpr.bussines.DiagnosisManager;
 import ba.unsa.etf.rpr.domain.Doctor;
 import ba.unsa.etf.rpr.domain.History;
@@ -13,9 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import javax.print.Doc;
-import java.io.IOException;
 
 public class AddDiagnosisController {
 
@@ -43,7 +38,7 @@ public class AddDiagnosisController {
     @FXML
     private void save(ActionEvent actionEvent) throws HospitalException {
         History newHistory = new History(1, patient, doctor, diagnosis.getText());
-        diagnosisManager.addDiagnosis(newHistory);
+        diagnosisManager.add(newHistory);
         DoctorHomeController doctorHomeController = new DoctorHomeController(doctor);
         new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", doctorHomeController, (Stage) save.getScene().getWindow());
     }
