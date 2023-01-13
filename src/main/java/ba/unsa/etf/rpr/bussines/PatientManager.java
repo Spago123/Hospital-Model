@@ -7,10 +7,8 @@ import ba.unsa.etf.rpr.exceptions.HospitalException;
 
 import java.util.List;
 
-public class PatientManager {
+public class PatientManager implements Manager<Patient>{
 
-    //DaoFactory daoFactory = new DaoFactory();
-;
     public List<Patient> getByDoctor(Doctor doctor) throws HospitalException {
         return DaoFactory.patientDao().searchByDoctor(doctor);
     }
@@ -19,12 +17,18 @@ public class PatientManager {
         return DaoFactory.patientDao().getAll();
     }
 
-    public void addPatient(Patient patient) throws HospitalException {
-        DaoFactory.patientDao().add(patient);
+    @Override
+    public void delete(int id) throws HospitalException {
+     DaoFactory.patientDao().delete(id);
     }
 
-    public void updatePatient(Patient patient) throws HospitalException {
-        DaoFactory.patientDao().update(patient);
+    @Override
+    public void add(Patient item) throws HospitalException {
+        DaoFactory.patientDao().add(item);
+    }
+
+    public void update(Patient item) throws HospitalException {
+        DaoFactory.patientDao().update(item);
     }
 
     public Patient getById(int id) throws HospitalException {

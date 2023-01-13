@@ -6,10 +6,15 @@ import ba.unsa.etf.rpr.exceptions.HospitalException;
 
 import java.util.List;
 
-public class DoctorManager {
+public class DoctorManager implements Manager<Doctor>{
+    @Override
+    public void update(Doctor item) throws HospitalException {
+        DaoFactory.doctorDao().update(item);
+    }
 
-    public void updateDoctor(Doctor doctor) throws HospitalException {
-        DaoFactory.doctorDao().update(doctor);
+    @Override
+    public void add(Doctor item) throws HospitalException {
+        DaoFactory.doctorDao().add(item);
     }
 
     public List<Doctor> getByNameAndPass(String name, String pass){
@@ -18,5 +23,15 @@ public class DoctorManager {
 
     public Doctor getById(int id) throws HospitalException {
         return DaoFactory.doctorDao().getById(id);
+    }
+
+    @Override
+    public List<Doctor> getAll() throws HospitalException {
+        return DaoFactory.doctorDao().getAll();
+    }
+
+    @Override
+    public void delete(int id) throws HospitalException {
+        DaoFactory.doctorDao().delete(id);
     }
 }
