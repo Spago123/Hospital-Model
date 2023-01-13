@@ -63,6 +63,7 @@ public class LoginController {
                         doctorHomeController, (Stage) username.getScene().getWindow());
                 return;
             }
+
             username.setText("Username and password don't match");
             password.setText("");
             Alert alert = new Alert(Alert.AlertType.ERROR);

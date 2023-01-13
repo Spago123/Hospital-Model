@@ -11,6 +11,7 @@ import ba.unsa.etf.rpr.exceptions.HospitalException;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -41,14 +42,23 @@ public class EditPasswordController<Type extends Passwordabel> {
         //prevPass.setText("tu sam");
 
         prevPass.setText(user.getPassword());
+
+        newPass.setOnKeyPressed((EnterKeyBoard) (event) -> save(event));
     }
 
-    public void save(ActionEvent actionEvent) throws HospitalException {
-        user.setPassword(newPass.getText());
-        if(ifDoctor()){
-            doctorManager.updateDoctor((Doctor) user);
-        } else if(ifPatient()) {
-            patientManager.updatePatient((Patient) user);
+    public void save(ActionEvent actionEvent){
+        try {
+            user.setPassword(newPass.getText());
+            if (ifDoctor()) {
+                doctorManager.updateDoctor((Doctor) user);
+            } else if (ifPatient()) {
+                patientManager.updatePatient((Patient) user);
+            }
+        } catch (HospitalException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("ERROR!");
+            alert.setHeaderText("Something went wrong while updating password!");
+            alert.setContentText("An error occurred while updating the new password, please try again later");
         }
 
         closeWindow();
