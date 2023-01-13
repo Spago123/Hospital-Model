@@ -41,11 +41,11 @@ public class ViewHistoryController<Type extends Passwordabel> {
         System.out.println("dao");
         if(user.getClass().getName().equals("ba.unsa.etf.rpr.domain.Patient")) {
             PatientHomeController patientHomeController = new PatientHomeController((Patient) user);
-            new OpenNewWindow().openDialog(AppFX.getPageTitle("patientHome"), "/fxml/patientHome.fxml", patientHomeController, (Stage) patientName.getScene().getWindow());
+            new OpenNewWindow().openDialog("patientHome", "/fxml/patientHome.fxml", patientHomeController, (Stage) patientName.getScene().getWindow());
         } else if(user.getClass().getName().equals("ba.unsa.etf.rpr.domain.Doctor")){
             System.out.println("so");
             DoctorHomeController doctorHomeController = new DoctorHomeController((Doctor) user);
-            new OpenNewWindow().openDialog(AppFX.getPageTitle("doctorHome"), "/fxml/doctorHome.fxml", doctorHomeController, (Stage) patientName.getScene().getWindow());
+            new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", doctorHomeController, (Stage) patientName.getScene().getWindow());
         }
     }
 }

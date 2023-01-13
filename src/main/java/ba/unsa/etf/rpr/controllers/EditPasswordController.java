@@ -9,8 +9,14 @@ import ba.unsa.etf.rpr.domain.Passwordabel;
 import ba.unsa.etf.rpr.domain.Patient;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Ovo radi samo jos povezivanje
@@ -33,6 +39,7 @@ public class EditPasswordController<Type extends Passwordabel> {
 
     public void initialize(){
         //prevPass.setText("tu sam");
+
         prevPass.setText(user.getPassword());
     }
 
@@ -56,11 +63,11 @@ public class EditPasswordController<Type extends Passwordabel> {
        if(ifPatient()){
             //System.out.println("Uso");
             PatientHomeController patientHomeController = new PatientHomeController((Patient) user);
-            new OpenNewWindow<>().openDialog(AppFX.getPageTitle("patientHome"), "/fxml/patientHome.fxml", patientHomeController, (Stage) newPass.getScene().getWindow());
+            new OpenNewWindow<>().openDialog("patientHome", "/fxml/patientHome.fxml", patientHomeController, (Stage) newPass.getScene().getWindow());
         } else if(ifDoctor()){
            //System.out.println("Uso");
             DoctorHomeController doctorHomeController = new DoctorHomeController((Doctor) user);
-            new OpenNewWindow<>().openDialog(AppFX.getPageTitle("doctorHome"), "/fxml/doctorHome.fxml", doctorHomeController, (Stage) newPass.getScene().getWindow());
+            new OpenNewWindow<>().openDialog("doctorHome", "/fxml/doctorHome.fxml", doctorHomeController, (Stage) newPass.getScene().getWindow());
         }
     }
 

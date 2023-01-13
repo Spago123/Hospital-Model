@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89c39086-bff4-4b4f-8fdf-a709ad11443a" name="Changes" comment="ChangeFive">
+    <list default="true" id="89c39086-bff4-4b4f-8fdf-a709ad11443a" name="Changes" comment="ChangeSix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/AddDiagnosisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/AddDiagnosisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/AddPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/AddPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/DoctorHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/DoctorHomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/EditPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/EditPasswordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/OpenNewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/OpenNewWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/ViewHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/controllers/ViewHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddDiagnosisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddDiagnosisController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddPatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/AddPatientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/DoctorHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/DoctorHomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/OpenNewWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/OpenNewWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/ViewHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ba/unsa/etf/rpr/controllers/ViewHistoryController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +98,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670231794638</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Implemented AbstractDao, and Idable Interface">
-      <created>1672257411498</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1672257411498</updated>
     </task>
     <task id="LOCAL-00020" summary="Implemented AbstractDao, and Idable Interface part 2">
       <created>1672261367065</created>
@@ -431,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673385957308</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="ChangeSix">
+      <created>1673561504075</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1673561504075</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,7 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AddPatient view and controller" />
     <MESSAGE value="App AppFX" />
     <MESSAGE value="view History and controller" />
     <MESSAGE value="Patient manager controller" />
@@ -471,6 +481,7 @@
     <MESSAGE value="ChangeTree" />
     <MESSAGE value="ChangeFour" />
     <MESSAGE value="ChangeFive" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChangeFive" />
+    <MESSAGE value="ChangeSix" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChangeSix" />
   </component>
 </project>

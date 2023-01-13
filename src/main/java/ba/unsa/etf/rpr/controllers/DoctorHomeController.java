@@ -82,7 +82,7 @@ public class DoctorHomeController {
     private void showHistory(int historyId) {
         try {
             ViewHistoryController viewHistoryController = new ViewHistoryController<Doctor>(diagnosisManager.getById(historyId), doctor);
-            new OpenNewWindow<>().openDialog(AppFX.getPageTitle("viewHistory"), "/fxml/viewHistory.fxml", viewHistoryController, (Stage) myDiagnosis.getScene().getWindow());
+            new OpenNewWindow<>().openDialog("viewHistory", "/fxml/viewHistory.fxml", viewHistoryController, (Stage) myDiagnosis.getScene().getWindow());
         } catch (HospitalException e) {
             e.printStackTrace();
         }
@@ -91,7 +91,7 @@ public class DoctorHomeController {
     private void addNewDiagnosis(int patientId) {
         try {
             AddDiagnosisController addDiagnosisController = new AddDiagnosisController(patientManager.getById(patientId), doctor);
-            new OpenNewWindow<>().openDialog(AppFX.getPageTitle("addDiagnosis"), "/fxml/addDiagnosis.fxml", addDiagnosisController, (Stage) myDiagnosis.getScene().getWindow());
+            new OpenNewWindow<>().openDialog("addDiagnosis", "/fxml/addDiagnosis.fxml", addDiagnosisController, (Stage) myDiagnosis.getScene().getWindow());
         } catch (HospitalException e) {
             throw new RuntimeException(e);
         }

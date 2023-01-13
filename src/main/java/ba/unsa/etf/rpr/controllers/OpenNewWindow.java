@@ -9,11 +9,13 @@ import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.beans.EventHandler;
 import java.io.IOException;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class OpenNewWindow<Type> {
+
     public void openDialog(String title, String file, Type controller, Stage previous) {
         try {
             if(previous != null) {

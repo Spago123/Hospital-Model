@@ -36,11 +36,11 @@ public class AddPatientController {
     }
 
     public void exitBtn(javafx.event.ActionEvent actionEvent) {
-        new OpenNewWindow().openDialog(AppFX.getPageTitle("doctorHome"), "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
+        new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
     }
 
     public void addBtn(javafx.event.ActionEvent actionEvent) throws HospitalException {
         patientManager.addPatient(new Patient(1, patientsName.getText(), patientsPassword.getText(),Long.parseLong(patientsUIN.getText()), doctor));
-        new OpenNewWindow().openDialog(AppFX.getPageTitle("doctorHome"), "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
+        new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
     }
 }

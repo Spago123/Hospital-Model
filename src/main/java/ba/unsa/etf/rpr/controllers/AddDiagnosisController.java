@@ -45,12 +45,12 @@ public class AddDiagnosisController {
         History newHistory = new History(1, patient, doctor, diagnosis.getText());
         diagnosisManager.addDiagnosis(newHistory);
         DoctorHomeController doctorHomeController = new DoctorHomeController(doctor);
-        new OpenNewWindow().openDialog(AppFX.getPageTitle("doctorHome"), "/fxml/doctorHome.fxml", doctorHomeController, (Stage) save.getScene().getWindow());
+        new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", doctorHomeController, (Stage) save.getScene().getWindow());
     }
 
     @FXML
     private void exit(ActionEvent actionEvent) {
         DoctorHomeController doctorHomeController = new DoctorHomeController(doctor);
-        new OpenNewWindow().openDialog( AppFX.getPageTitle("doctorHome"), "/fxml/doctorHome.fxml", doctorHomeController, (Stage) save.getScene().getWindow());
+        new OpenNewWindow().openDialog( "doctorHome", "/fxml/doctorHome.fxml", doctorHomeController, (Stage) save.getScene().getWindow());
     }
 }
