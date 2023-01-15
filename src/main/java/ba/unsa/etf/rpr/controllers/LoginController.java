@@ -47,9 +47,9 @@ public class LoginController {
     private void login(ActionEvent actionEvent) {
         try {
 
-            List<Patient> patient = patientManager.getByNameAndPass(username.getText(), password.getText());
-            if (patient.size() != 0) {
-                PatientHomeController patientHomeController = new PatientHomeController(patient.get(0));
+            List<Patient> patients = patientManager.getByNameAndPass(username.getText(), password.getText());
+            if (patients.size()!=0) {
+                PatientHomeController patientHomeController = new PatientHomeController(patients.get(0));
                 new OpenNewWindow<>().openDialog("patientHome", "/fxml/patientHome.fxml",
                         patientHomeController, (Stage) username.getScene().getWindow());
                 return;
@@ -66,21 +66,13 @@ public class LoginController {
 
             username.setText("Username and password don't match");
             password.setText("");
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR");
-            alert.setHeaderText("Incorrect login form");
-            alert.setContentText("Username or password do not match!");
 
-            alert.showAndWait();
-
+            OpenNewWindow.alert(Alert.AlertType.ERROR, "ERROR!", "Incorrect login form",
+                    "Username and password don't match!");
 
         }catch (Exception e){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR");
-            alert.setHeaderText("Something went terribly wrong!");
-            alert.setContentText("Something went wrong try again later!");
-
-            alert.showAndWait();
+            OpenNewWindow.alert(Alert.AlertType.ERROR, "ERROR!", "Something went terribly wrong!",
+                    "Something went wrong try again later");
         }
     }
 }

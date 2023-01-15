@@ -113,7 +113,6 @@ public class DoctorHomeController {
     }
 
     public void edit(ActionEvent actionEvent) {
-        System.out.println("hje");
         EditPasswordController editPasswordController = new EditPasswordController<Doctor>(doctor);
         new OpenNewWindow<>().openDialog("editPass", "/fxml/editPass.fxml", editPasswordController, (Stage) myDiagnosis.getScene().getWindow());
     }

@@ -82,6 +82,7 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
             while (rs.next()) {
                 resultList.add(row2object(rs));
             }
+
             return resultList;
         } catch (SQLException e) {
             throw new HospitalException(e.getMessage(), e);
