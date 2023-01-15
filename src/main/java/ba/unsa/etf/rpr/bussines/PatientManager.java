@@ -24,10 +24,21 @@ public class PatientManager implements Manager<Patient>{
 
     @Override
     public void add(Patient item) throws HospitalException {
+
+        if(!StuffManager.verifyPassword(item.getPassword()))
+            throw new HospitalException("Password should be between 7 and 15 letters long!");
+
+        if (getByNameAndUIN(item.getName(), item.getUIN()).size() != 0)
+            throw new HospitalException("Patient with name: " + item.getName() + " and UIN: " + item.getUIN() + "already exists");
+
         DaoFactory.patientDao().add(item);
     }
 
     public void update(Patient item) throws HospitalException {
+
+        if(!StuffManager.verifyPassword(item.getPassword()))
+            throw new HospitalException("Password should be between 7 and 15 letters long!");
+
         DaoFactory.patientDao().update(item);
     }
 
