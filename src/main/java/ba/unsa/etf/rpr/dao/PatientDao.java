@@ -14,4 +14,7 @@ public interface PatientDao extends Dao<Patient>{
     List<Patient> searchByDoctor(Doctor doctor);
 
     List<Patient> searchByNameAndPass(String name, String pass);
+
+    List<Patient> searchByNameAndUin(String name, Long UIN);
+
 }

@@ -65,4 +65,13 @@ public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDa
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public List<Patient> searchByNameAndUin(String name, Long UIN) {
+        try {
+            return super.executeQuery("SELECT * FROM Patients WHERE name = ? AND UIN = ?", new Object[]{name, UIN});
+        } catch (HospitalException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

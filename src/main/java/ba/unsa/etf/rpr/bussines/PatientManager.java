@@ -38,4 +38,8 @@ public class PatientManager implements Manager<Patient>{
     public List<Patient> getByNameAndPass(String name, String pass){
         return DaoFactory.patientDao().searchByNameAndPass(name, pass);
     }
+
+    public List<Patient> getByNameAndUIN(String name, Long UIN){
+        return DaoFactory.patientDao().searchByNameAndUin(name, UIN);
+    }
 }
