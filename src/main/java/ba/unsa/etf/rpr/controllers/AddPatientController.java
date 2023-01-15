@@ -38,8 +38,14 @@ public class AddPatientController {
 
     public void addBtn(javafx.event.ActionEvent actionEvent) throws HospitalException {
         if (EditPasswordController.verifyPassword(patientsPassword.getText())) {
-            patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), Long.parseLong(patientsUIN.getText()), doctor));
-            new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
+
+            if(patientManager.getByNameAndUIN(patientsName.getText(), Long.parseLong(patientsUIN.getText())) == null) {
+                patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), Long.parseLong(patientsUIN.getText()), doctor));
+                new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
+            } else {
+                OpenNewWindow.alert(Alert.AlertType.ERROR, "ERROR!", "Problems while adding new patient",
+                        "Patient with name : " + patientsName.getText() + " and UIN: " + patientsUIN.getText() + " already exists");
+            }
         }
      else {
             OpenNewWindow.alert(Alert.AlertType.WARNING, "WARNING", "Problems while updating patients password",
