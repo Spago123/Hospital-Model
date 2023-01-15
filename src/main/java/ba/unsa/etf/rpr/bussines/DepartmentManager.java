@@ -30,6 +30,10 @@ public class DepartmentManager implements Manager<Department> {
 
     @Override
     public void add(Department item) throws HospitalException {
+        for(Department department : getAll()){
+            if(department.getName().equals(item.getName()))
+                throw new HospitalException(item.getName() + " department already exists!");
+        }
         DaoFactory.departmentDao().add(item);
     }
 }

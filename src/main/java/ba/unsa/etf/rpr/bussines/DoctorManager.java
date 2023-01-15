@@ -14,6 +14,10 @@ public class DoctorManager implements Manager<Doctor>{
 
     @Override
     public void add(Doctor item) throws HospitalException {
+        for(Doctor doctor : getAll()){
+            if(doctor.getName().equals(item.getName()))
+                throw new HospitalException(item + " is already in database!");
+        }
         DaoFactory.doctorDao().add(item);
     }
 

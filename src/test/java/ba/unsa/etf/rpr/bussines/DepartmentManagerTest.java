@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.dao.DepartmentDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Department;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -83,5 +84,16 @@ public class DepartmentManagerTest {
 
         Assertions.assertTrue(true);
         Mockito.verify(departmentManager).delete(deleteDepartment.getId());
+    }
+
+    @Test
+    void addAlreadyExisting() throws HospitalException {
+        Department newDepartment = new Department(40, "Novi odjel");
+        Mockito.doCallRealMethod().when(departmentManager).add(newDepartment);
+
+        HospitalException exception = Assertions.assertThrows(HospitalException.class, () -> departmentManager.add(newDepartment),
+                "Department already exists");
+
+        Assert.assertEquals("Department already exists", exception.getMessage());
     }
 }
