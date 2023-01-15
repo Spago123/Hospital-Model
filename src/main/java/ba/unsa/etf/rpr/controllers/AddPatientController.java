@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.domain.Doctor;
 import ba.unsa.etf.rpr.domain.Patient;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -36,7 +37,13 @@ public class AddPatientController {
     }
 
     public void addBtn(javafx.event.ActionEvent actionEvent) throws HospitalException {
-        patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(),Long.parseLong(patientsUIN.getText()), doctor));
-        new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
+        if (EditPasswordController.verifyPassword(patientsPassword.getText())) {
+            patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), Long.parseLong(patientsUIN.getText()), doctor));
+            new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
+        }
+     else {
+            OpenNewWindow.alert(Alert.AlertType.WARNING, "WARNING", "Problems while updating patients password",
+                    "The password should be between 7 - 15 letter long");
+       }
     }
 }
