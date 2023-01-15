@@ -72,6 +72,7 @@ public class DoctorManagerTest {
     @Test
     public void addDoctor() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
+        Mockito.doCallRealMethod().when(doctorManager).add(doctor);
         doctorManager.add(doctor);
 
         Assertions.assertTrue(true);
@@ -81,6 +82,7 @@ public class DoctorManagerTest {
     @Test
     public void deleteDoctor() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
+        Mockito.doCallRealMethod().when(doctorManager).delete(doctor.getId());
         doctorManager.delete(doctor.getId());
 
         Assertions.assertTrue(true);

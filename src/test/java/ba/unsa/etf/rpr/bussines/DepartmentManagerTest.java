@@ -71,6 +71,7 @@ public class DepartmentManagerTest {
     @Test
     public void addDepartment() throws HospitalException {
         Department newDepartment = new Department(40, "Novi odjel");
+        Mockito.doCallRealMethod().when(departmentManager).add(newDepartment);
         departmentManager.add(newDepartment);
 
         Assertions.assertTrue(true);
@@ -80,6 +81,7 @@ public class DepartmentManagerTest {
     @Test
     public void deleteDepartment() throws HospitalException {
         Department deleteDepartment = new Department(40, "Novi odjel");
+        Mockito.doCallRealMethod().when(departmentManager).delete(deleteDepartment.getId());
         departmentManager.delete(deleteDepartment.getId());
 
         Assertions.assertTrue(true);
