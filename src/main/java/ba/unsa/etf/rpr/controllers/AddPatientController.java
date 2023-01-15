@@ -36,20 +36,12 @@ public class AddPatientController {
         new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
     }
 
-    public void addBtn(javafx.event.ActionEvent actionEvent) throws HospitalException {
-        if (EditPasswordController.verifyPassword(patientsPassword.getText())) {
-
-            if(patientManager.getByNameAndUIN(patientsName.getText(), Long.parseLong(patientsUIN.getText())) == null) {
-                patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), Long.parseLong(patientsUIN.getText()), doctor));
-                new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
-            } else {
-                OpenNewWindow.alert(Alert.AlertType.ERROR, "ERROR!", "Problems while adding new patient",
-                        "Patient with name : " + patientsName.getText() + " and UIN: " + patientsUIN.getText() + " already exists");
-            }
+    public void addBtn(javafx.event.ActionEvent actionEvent) {
+        try {
+            patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), Long.parseLong(patientsUIN.getText()), doctor));
+        } catch (HospitalException e){
+            OpenNewWindow.alert(Alert.AlertType.ERROR, "ERROR!", "Something went wrong",
+                    e.getMessage());
         }
-     else {
-            OpenNewWindow.alert(Alert.AlertType.WARNING, "WARNING", "Problems while updating patients password",
-                    "The password should be between 7 - 15 letter long");
-       }
     }
 }

@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.bussines.DoctorManager;
 import ba.unsa.etf.rpr.bussines.PatientManager;
+import ba.unsa.etf.rpr.bussines.StuffManager;
 import ba.unsa.etf.rpr.domain.Doctor;
 import ba.unsa.etf.rpr.domain.Passwordabel;
 import ba.unsa.etf.rpr.domain.Patient;
@@ -39,7 +40,7 @@ public class EditPasswordController<Type extends Passwordabel> {
     }
 
     public void save(ActionEvent actionEvent){
-        if(verifyPassword(newPass.getText())) {
+        if(StuffManager.verifyPassword(newPass.getText())) {
             try {
                 user.setPassword(newPass.getText());
                 if (ifDoctor()) {
@@ -80,11 +81,5 @@ public class EditPasswordController<Type extends Passwordabel> {
         return user.getClass().getName().equals("ba.unsa.etf.rpr.domain.Doctor");
     }
 
-    public static boolean verifyPassword(String pass){
-        if(pass == null || pass.length()<7 || pass.length()>15){
-            return false;
-        }
-        return true;
-    }
 }
 
