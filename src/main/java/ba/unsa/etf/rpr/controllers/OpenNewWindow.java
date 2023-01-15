@@ -31,7 +31,14 @@ public class OpenNewWindow<Type> {
         } catch (Exception e){
             new Alert(Alert.AlertType.NONE, e.getMessage(), ButtonType.OK).show();
         }
+    }
 
+    public static void alert(Alert.AlertType type, String title, String header, String context){
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(context);
+        alert.showAndWait();
     }
 }
 
