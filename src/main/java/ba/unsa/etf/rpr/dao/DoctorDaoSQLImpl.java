@@ -38,6 +38,13 @@ public class DoctorDaoSQLImpl extends AbstractDao<Doctor> implements DoctorDao{
             instance = null;
     }
 
+    /**
+     * Method that converts an entity from Doctor table
+     * to Doctor JavaBean
+     * @param rs - result set from database
+     * @return Doctor JavaBean
+     * @throws HospitalException
+     */
     @Override
     public Doctor row2object(ResultSet rs) throws HospitalException {
         try{
