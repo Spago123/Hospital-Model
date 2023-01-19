@@ -56,6 +56,11 @@ public class AppFX extends Application {
         new OpenNewWindow<LoginController>().openDialog("loginPage", "/fxml/newLogin.fxml", new LoginController(), null);
     }
 
+    /**
+     * Static method that returns the page name assigned to the key in the map pageNames
+     * @param key String
+     * @return String that represents a page name
+     */
     public static String getPageTitle(String key){
         return pageNames.get(key);
     }
