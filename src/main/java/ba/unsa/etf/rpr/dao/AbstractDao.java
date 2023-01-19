@@ -100,7 +100,7 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
     }
 
     /**
-     * Method that executes a custom query to the Data Base
+     * Method that executes a custom query to the Data Base, and returns more than one record
      * @param query String that represents a custom query
      * @param params array of needed parameters for the query
      * @return List of JavaBean objects
@@ -127,7 +127,7 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
     }
 
     /**
-     * Utility for query execution that always return single record
+     * Method for query execution that always return single record
      * @param query - query that returns single record
      * @param params - list of params for sql query
      * @return Object
