@@ -86,6 +86,12 @@ public class DoctorDaoSQLImpl extends AbstractDao<Doctor> implements DoctorDao{
         }
     }
 
+    /**
+     * Method that returns the doctor whose name and password equal the given name and password
+     * @param name of the Doctor
+     * @param password of the Doctor
+     * @return List of Doctors
+     */
     @Override
     public List<Doctor> searchByNameAndPassword(String name, String password) {
         try {
