@@ -46,6 +46,11 @@ public class AppFX extends Application {
         launch(args);
     }
 
+    /**
+     * Start point for GUI app
+     * @param primaryStage
+     * @throws IOException
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
         new OpenNewWindow<LoginController>().openDialog("loginPage", "/fxml/newLogin.fxml", new LoginController(), null);
