@@ -17,6 +17,10 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
     private static Connection connection = null;
     private String tableName;
 
+    /**
+     * Public Constructor in which the connection to the Data Base is created
+     * @param tableName is a String that represents a concrete table name used in the data base
+     */
     public AbstractDao(String tableName){
         this.tableName = tableName;
         createConnection();
