@@ -6,6 +6,11 @@ import ba.unsa.etf.rpr.domain.Patient;
 
 import java.util.List;
 
+/**
+ * HistoryDao is an interface that has to be implemented
+ * by the DaoSqlImpl that works with the Histories table in the database
+ */
+
 public interface HistoryDao extends Dao<History> {
     /**
      * Method that lists out the history of a patient
