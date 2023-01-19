@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.Objects;
 
 /**
- * Doctor Java Bean
+ * Doctor is a Java Bean that represent an entity tht exists in the Data Base
  */
 
 public class Doctor implements Idable, Passwordabel{
