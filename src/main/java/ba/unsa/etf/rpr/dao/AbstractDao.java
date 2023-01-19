@@ -78,9 +78,17 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
      */
     public abstract Map<String, Object> object2row(Type object);
 
+    /**
+     * Method that returns an entity from the Data Base which has the
+     * same id as the number that is being given as a parameter
+     * @param id primary key for entity
+     * @return a JavaBean object that represents the table name, aka table in the Data Base
+     * @throws HospitalException
+     */
     public Type getById(int id) throws HospitalException {
         return executeQueryUnique("SELECT * FROM "+this.tableName+" WHERE id = ?", new Object[]{id});
     }
+
 
     public List<Type> getAll() throws HospitalException {
         return executeQuery("SELECT * FROM "+ tableName, null);
