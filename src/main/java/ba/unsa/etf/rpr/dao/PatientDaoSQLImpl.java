@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+
+/**
+ * PatientDaoSqlImpl is the class that contains all the methods that are needed
+ * to work with the Patients table in the database
+ */
 public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDao {
 
     private static PatientDaoSQLImpl instance = null;
