@@ -24,6 +24,10 @@ public class HistoryDaoSQLImpl extends AbstractDao<History> implements HistoryDa
         super("Histories");
     }
 
+    /**
+     * Factory method for singleton design pattern
+     * @return HistoryDaoSqlImpl
+     */
     public static HistoryDaoSQLImpl getInstance(){
         if(instance == null)
             instance = new HistoryDaoSQLImpl();
