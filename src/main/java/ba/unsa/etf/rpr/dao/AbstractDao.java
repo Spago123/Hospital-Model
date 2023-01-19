@@ -6,6 +6,12 @@ import ba.unsa.etf.rpr.exceptions.HospitalException;
 import java.sql.*;
 import java.util.*;
 
+/**
+ * AbstractDao represents an abstract class that implements shared methods by other DaoSqlImpl classes,
+ * this class is later inherited in other DaoSqlImpl classes
+ * @param <Type> is a type that implements the Idable interface
+ */
+
 public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
 
     private static Connection connection = null;
