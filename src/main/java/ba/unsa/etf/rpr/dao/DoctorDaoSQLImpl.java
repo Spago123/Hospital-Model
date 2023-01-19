@@ -55,6 +55,12 @@ public class DoctorDaoSQLImpl extends AbstractDao<Doctor> implements DoctorDao{
         }
     }
 
+    /**
+     * Method that converts an DoctorJava bean to
+     * a record for the Doctors table in the database
+     * @param object - a bean object for specific table
+     * @return map that represents the object created for the database
+     */
     @Override
     public Map<String, Object> object2row(Doctor object) {
         Map<String, Object> item = new TreeMap<>();
