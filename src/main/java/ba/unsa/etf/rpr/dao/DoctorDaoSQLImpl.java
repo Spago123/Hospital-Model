@@ -23,7 +23,10 @@ public class DoctorDaoSQLImpl extends AbstractDao<Doctor> implements DoctorDao{
         super("Doctors");
     }
 
-
+    /**
+     * Factory method for singleton design pattern
+     * @return DoctorDaoSqlImpl
+     */
     public static DoctorDaoSQLImpl getInstance(){
         if(instance == null)
             instance = new DoctorDaoSQLImpl();
