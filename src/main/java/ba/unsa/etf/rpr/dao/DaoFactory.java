@@ -1,5 +1,8 @@
 package ba.unsa.etf.rpr.dao;
 
+/**
+ * DaoFactory represents the implementation of Factory design pattern
+ */
 public class DaoFactory {
     private static final PatientDao patientDao = PatientDaoSQLImpl.getInstance();
     private static final DoctorDao doctorDao = DoctorDaoSQLImpl.getInstance();
