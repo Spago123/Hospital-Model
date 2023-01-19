@@ -37,6 +37,10 @@ public class DaoFactory {
         return historyDao;
     }
 
+    /**
+     * Method that returns DepartmentDao
+     * @return DepartmentDao
+     */
     public static DepartmentDao departmentDao(){
         return departmentDao;
     }
