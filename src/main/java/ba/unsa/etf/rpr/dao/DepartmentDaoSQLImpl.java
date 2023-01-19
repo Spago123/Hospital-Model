@@ -20,6 +20,10 @@ public class DepartmentDaoSQLImpl extends AbstractDao<Department> implements Dep
         super("Departments");
     }
 
+    /**
+     * Implementation of factory model for singleton design pattern
+     * @return DepartmentDaoSqlImpl
+     */
     public static DepartmentDaoSQLImpl getInstance(){
         if(instance == null)
             instance = new DepartmentDaoSQLImpl();
