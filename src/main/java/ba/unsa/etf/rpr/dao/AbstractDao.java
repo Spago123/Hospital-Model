@@ -89,7 +89,12 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
         return executeQueryUnique("SELECT * FROM "+this.tableName+" WHERE id = ?", new Object[]{id});
     }
 
-
+    /**
+     * Method that return all entities from the Data Base table which has the
+     * same name as the parameter tableName
+     * @return List of JavaBean objects
+     * @throws HospitalException
+     */
     public List<Type> getAll() throws HospitalException {
         return executeQuery("SELECT * FROM "+ tableName, null);
     }
