@@ -5,6 +5,11 @@ import ba.unsa.etf.rpr.domain.Doctor;
 
 import java.util.List;
 
+/**
+ * DoctorDao is an interface that has to be implemented
+ * by the DaoSqlImpl that works with the Doctors table in the database
+ */
+
 public interface DoctorDao extends Dao<Doctor>{
     /**
      * Method that lets you search the Doctors table by their department id
