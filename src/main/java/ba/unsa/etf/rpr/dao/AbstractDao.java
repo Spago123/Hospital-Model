@@ -157,6 +157,12 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
         }
     }
 
+    /**
+     * Method that adds a record to the database
+     * @param item - bean to be added to database
+     * @return item - that is being added to the database
+     * @throws HospitalException
+     */
     public Type add(Type item) throws HospitalException{
         Map<String, Object> row = object2row(item);
         Map.Entry<String, String> columns = prepareInsertParts(row);
