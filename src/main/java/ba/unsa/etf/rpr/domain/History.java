@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * History Java Bean
+ * History is a Java Bean that represents an entity that exists in the Data Base
  */
 
 public class History implements Idable{
