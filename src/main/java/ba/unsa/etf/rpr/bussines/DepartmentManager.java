@@ -39,4 +39,8 @@ public class DepartmentManager implements Manager<Department> {
         }
         DaoFactory.departmentDao().add(item);
     }
+
+    public List<Department> getByName(String name){
+        return DaoFactory.departmentDao().getByName(name);
+    }
 }

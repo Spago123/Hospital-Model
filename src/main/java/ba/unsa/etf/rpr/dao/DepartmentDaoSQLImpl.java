@@ -64,4 +64,13 @@ public class DepartmentDaoSQLImpl extends AbstractDao<Department> implements Dep
         row.put("name", object.getName());
         return row;
     }
+
+    @Override
+    public List<Department> getByName(String name) {
+        try {
+            return super.executeQuery("SELECT * FROM Departments WHERE name = ?", new Object[]{name});
+        } catch (HospitalException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
