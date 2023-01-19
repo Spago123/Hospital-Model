@@ -211,6 +211,12 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
         return new AbstractMap.SimpleEntry<>(columns.toString(), questions.toString());
     }
 
+    /**
+     * Method that updates an record in the database
+     * @param item - bean to be updated
+     * @return item - bean to be updated
+     * @throws HospitalException
+     */
     public Type update(Type item) throws HospitalException{
         Map<String, Object> row = object2row(item);
         String updateColumns = prepareUpdateParts(row);
