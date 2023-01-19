@@ -21,6 +21,10 @@ public class DaoFactory {
         return patientDao;
     }
 
+    /**
+     * Method that return DoctorDao object
+     * @return DoctorDao
+     */
     public static DoctorDao doctorDao(){
         return doctorDao;
     }
