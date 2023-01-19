@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * Patient Java Bean
+ * Patient is a Java Bean that represents an entity that exists in the Data Base
  */
 public class Patient implements Idable, Passwordabel {
     private int id;
