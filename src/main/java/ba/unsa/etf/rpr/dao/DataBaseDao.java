@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * DataBaseDao represents the class that is connecting us to the database
+ * It implements the singleton design pattern
+ */
 public class DataBaseDao {
     private static Connection connection;
 
