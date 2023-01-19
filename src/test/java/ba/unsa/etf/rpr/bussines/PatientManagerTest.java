@@ -14,6 +14,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Tests for PatientManager class
+ */
 public class PatientManagerTest {
 
     private DoctorManagerTest doctorManagerTest;
@@ -75,16 +78,26 @@ public class PatientManagerTest {
         this.patients = patients;
     }
 
+    /**
+     * Test for when password is too short
+     */
     @Test
     public void passwordTooShort() {
         Assertions.assertEquals(false, StuffManager.verifyPassword("Zalik"));
     }
 
+    /**
+     * Testing when password to long
+     */
     @Test
     public void passwordTooLong() {
         Assertions.assertEquals(false, StuffManager.verifyPassword("MelikiAlikim1234"));
     }
 
+    /**
+     * Testing add method
+     * @throws HospitalException
+     */
     @Test
     public void addPatient() throws HospitalException {
         patient = new Patient(1, "Vezo Vezic", "VezoVezic123", 10101010101010L, doctorManagerTest.getDoctorManager().getById(2));
@@ -94,6 +107,10 @@ public class PatientManagerTest {
         Mockito.verify(patientManager).add(patient);
     }
 
+    /**
+     * Testing add method but the patient already exists
+     * @throws HospitalException
+     */
     @Test
     public void addAlreadyExisting() throws HospitalException {
         patient = new Patient(1, "Halid Halidic","Vahidic", 123456789101L,  doctorManagerTest.getDoctorManager().getById(1));
@@ -105,6 +122,10 @@ public class PatientManagerTest {
         Assertions.assertEquals("Patient already in database", HospitalException.getMessage());
     }
 
+    /**
+     * Testing add method but the password is too short
+     * @throws HospitalException
+     */
     @Test
     public void addDonExistingButPasswordShort() throws HospitalException {
         patient = new Patient(2, "Hehehhehe", "Valid", 891010101010L, doctorManagerTest.getDoctorManager().getById(3));
@@ -116,6 +137,10 @@ public class PatientManagerTest {
         Assertions.assertEquals("Password too short", HospitalException.getMessage());
     }
 
+    /**
+     * Testing delete method
+     * @throws HospitalException
+     */
     @Test
     public void deletePatient() throws HospitalException {
         patient = patientManager.getById(1);
