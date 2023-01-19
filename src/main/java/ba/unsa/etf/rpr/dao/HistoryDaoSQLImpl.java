@@ -67,6 +67,12 @@ public class HistoryDaoSQLImpl extends AbstractDao<History> implements HistoryDa
         return item;
     }
 
+    /**
+     * Method that lets you search the Histories table
+     * for the given patient
+     * @param patient the patient whose history you are searching
+     * @return List of Histories for the given patient
+     */
     @Override
     public List<History> searchByPatient(Patient patient) {
         try {
