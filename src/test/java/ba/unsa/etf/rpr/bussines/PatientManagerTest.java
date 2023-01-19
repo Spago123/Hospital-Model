@@ -1,13 +1,11 @@
 package ba.unsa.etf.rpr.bussines;
 
-import ba.unsa.etf.rpr.controllers.EditPasswordController;
+
 import ba.unsa.etf.rpr.dao.PatientDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Patient;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -26,7 +24,7 @@ public class PatientManagerTest {
     private PatientDaoSQLImpl patientDaoSQLMock;
     private List<Patient> patients;
 
-    @Disabled
+    @BeforeEach
     public void initializeObjects() throws HospitalException {
         doctorManagerTest = new DoctorManagerTest();
         departmentManagerTest = new DepartmentManagerTest();
@@ -77,12 +75,12 @@ public class PatientManagerTest {
 
     @Test
     public void passwordTooShort() {
-        Assert.assertEquals(false, StuffManager.verifyPassword("Zalik"));
+        Assertions.assertEquals(false, StuffManager.verifyPassword("Zalik"));
     }
 
     @Test
     public void passwordTooLong() {
-        Assert.assertEquals(false, StuffManager.verifyPassword("MelikiAlikim1234"));
+        Assertions.assertEquals(false, StuffManager.verifyPassword("MelikiAlikim1234"));
     }
 
     @Test
@@ -102,7 +100,7 @@ public class PatientManagerTest {
         HospitalException HospitalException = Assertions.assertThrows(HospitalException.class, () -> patientManager.add(patient),
                 "Patient already in database");
 
-        Assert.assertEquals("Patient already in database", HospitalException.getMessage());
+        Assertions.assertEquals("Patient already in database", HospitalException.getMessage());
     }
 
     @Test
@@ -113,7 +111,7 @@ public class PatientManagerTest {
         HospitalException HospitalException = Assertions.assertThrows(HospitalException.class, () -> patientManager.add(patient),
                 "Password too short!");
 
-        Assert.assertEquals("Password too short", HospitalException.getMessage());
+        Assertions.assertEquals("Password too short", HospitalException.getMessage());
     }
 
     @Test
