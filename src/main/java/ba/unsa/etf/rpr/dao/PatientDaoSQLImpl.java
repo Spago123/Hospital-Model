@@ -86,6 +86,13 @@ public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDa
         }
     }
 
+    /**
+     * Method that lists out the patients that have the specified
+     * name and password
+     * @param name of the patient
+     * @param pass of the patient
+     * @return list of patients who have the same name and password
+     */
     @Override
     public List<Patient> searchByNameAndPass(String name, String pass) {
         try {
