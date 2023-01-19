@@ -27,6 +27,12 @@ public class AppFX extends Application {
      */
     static Map<String, String> pageNames = new TreeMap<>();
 
+    /**
+     * Entry point for GUI app
+     * the initialization of pageNames is done
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         Properties p = new Properties();
         p.load(ClassLoader.getSystemResource("application.properties.pageTitles").openStream());
