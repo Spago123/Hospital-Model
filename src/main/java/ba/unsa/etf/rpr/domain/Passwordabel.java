@@ -1,7 +1,9 @@
 package ba.unsa.etf.rpr.domain;
 
 /**
- * Interface that represents that an object, aka user has a password
+ * Passwordable is an interface that has to be implemented
+ * by every class that represents an entity in the Data Base
+ * and has the property password
  */
 public interface Passwordabel {
 
