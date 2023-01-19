@@ -15,6 +15,12 @@ import java.util.TreeMap;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * GUI interface for Application that models a Hospital
+ * @author Harun Špago
+ * @version 1.0.0
+ */
+
 public class AppFX extends Application {
 
     static Map<String, String> pageNames = new TreeMap<>();
