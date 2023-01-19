@@ -51,6 +51,12 @@ public class DepartmentDaoSQLImpl extends AbstractDao<Department> implements Dep
         }
     }
 
+    /**
+     * Method that converts a Department JavaBean to
+     * a record in Departments table in the database
+     * @param object - a bean object for specific table
+     * @return a map that represents the new row of the Department table
+     */
     @Override
     public Map<String, Object> object2row(Department object) {
         Map<String, Object> row = new TreeMap<>();
