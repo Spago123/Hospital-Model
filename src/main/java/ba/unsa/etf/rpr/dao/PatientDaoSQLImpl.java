@@ -36,6 +36,14 @@ public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDa
         if(instance!=null)
             instance = null;
     }
+
+    /**
+     * Method that converts a record from the Patients table
+     * to a Patient JavaBean
+     * @param rs - result set from database
+     * @return Patient JavaBean
+     * @throws HospitalException
+     */
     @Override
     public Patient row2object(ResultSet rs) throws HospitalException {
         try{
