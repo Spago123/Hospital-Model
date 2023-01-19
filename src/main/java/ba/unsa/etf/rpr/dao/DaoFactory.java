@@ -30,7 +30,7 @@ public class DaoFactory {
     }
 
     /**
-     * Method that return HistoryDao object
+     * Method that returns HistoryDao object
      * @return HistoryDao
      */
     public static HistoryDao historyDao(){
