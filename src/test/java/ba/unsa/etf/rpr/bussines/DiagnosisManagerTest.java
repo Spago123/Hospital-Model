@@ -15,6 +15,9 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
+/**
+ * Tests for DiagnosisManager class
+ */
 public class DiagnosisManagerTest {
 
     private DoctorManagerTest doctorManagerTest;
@@ -42,6 +45,10 @@ public class DiagnosisManagerTest {
         historyList.addAll(Arrays.asList(history1, history2));
     }
 
+    /**
+     * Testing the getAllMethod
+     * @throws HospitalException
+     */
     @Test
     public void printAllHistories() throws HospitalException {
         when(diagnosisManager.getAll()).thenReturn(historyList);
