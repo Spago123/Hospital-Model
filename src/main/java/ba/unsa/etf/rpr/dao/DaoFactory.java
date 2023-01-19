@@ -14,7 +14,7 @@ public class DaoFactory {
     }
 
     /**
-     * Method that return PatientDao object
+     * Method that returns PatientDao object
      * @return PatientDao
      */
     public static PatientDao patientDao(){
