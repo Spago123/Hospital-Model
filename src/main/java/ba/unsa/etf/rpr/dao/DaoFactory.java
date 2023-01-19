@@ -22,7 +22,7 @@ public class DaoFactory {
     }
 
     /**
-     * Method that return DoctorDao object
+     * Method that returns DoctorDao object
      * @return DoctorDao
      */
     public static DoctorDao doctorDao(){
