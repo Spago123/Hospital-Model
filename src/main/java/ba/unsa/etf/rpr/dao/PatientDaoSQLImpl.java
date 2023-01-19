@@ -22,6 +22,10 @@ public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDa
         super("Patients");
     }
 
+    /**
+     * Factory method for singleton design pattern
+     * @return PatientDaoSqlImpl
+     */
     public static PatientDaoSQLImpl getInstance(){
         if(instance == null)
             instance = new PatientDaoSQLImpl();
