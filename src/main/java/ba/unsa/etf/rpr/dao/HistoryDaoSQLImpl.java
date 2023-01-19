@@ -51,6 +51,12 @@ public class HistoryDaoSQLImpl extends AbstractDao<History> implements HistoryDa
         }
     }
 
+    /**
+     * Method that converts a History JavaBean to a record in the
+     * Histories table in the database
+     * @param object - a bean object for specific table
+     * @return the item to updated to the Histories Table
+     */
     @Override
     public Map<String, Object> object2row(History object) {
         Map<String, Object> item = new TreeMap<>();
