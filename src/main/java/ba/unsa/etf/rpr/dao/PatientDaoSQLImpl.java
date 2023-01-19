@@ -102,6 +102,13 @@ public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDa
         }
     }
 
+    /**
+     * Method that lists put the patients that have the specified
+     * name and unique personal identifier
+     * @param name of the patent
+     * @param UIN of the patient
+     * @return list of patients who have the same name and UIN
+     */
     @Override
     public List<Patient> searchByNameAndUin(String name, Long UIN) {
         try {
