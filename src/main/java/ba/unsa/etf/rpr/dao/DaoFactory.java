@@ -29,6 +29,10 @@ public class DaoFactory {
         return doctorDao;
     }
 
+    /**
+     * Method that return HistoryDao object
+     * @return HistoryDao
+     */
     public static HistoryDao historyDao(){
         return historyDao;
     }
