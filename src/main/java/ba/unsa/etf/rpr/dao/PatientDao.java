@@ -27,6 +27,13 @@ public interface PatientDao extends Dao<Patient>{
      */
     List<Patient> searchByNameAndPass(String name, String pass);
 
+    /**
+     * Method that lists put the patients that have the specified
+     * name and unique personal identifier
+     * @param name of the patent
+     * @param UIN of the patient
+     * @return list of patients that have the same name and UIN
+     */
     List<Patient> searchByNameAndUin(String name, Long UIN);
 
 }
