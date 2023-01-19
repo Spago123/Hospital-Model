@@ -54,6 +54,12 @@ public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDa
         }
     }
 
+    /**
+     * Method that converts a Patient JavaBean
+     * to a record in the Patients table
+     * @param object - a bean object for specific table
+     * @return created record
+     */
     @Override
     public Map<String, Object> object2row(Patient object) {
         Map<String, Object> row = new TreeMap<>();
