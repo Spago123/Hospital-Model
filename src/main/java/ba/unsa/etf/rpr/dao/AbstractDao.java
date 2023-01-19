@@ -55,6 +55,10 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
         }
     }
 
+    /**
+     * Static method that returns the connection to the Data Base
+     * @return Connection to Data Base
+     */
     public Connection getConnection(){
         return AbstractDao.connection;
     }
