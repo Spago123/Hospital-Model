@@ -99,6 +99,13 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
         return executeQuery("SELECT * FROM "+ tableName, null);
     }
 
+    /**
+     * Method that executes a custom query to the Data Base
+     * @param query String that represents a custom query
+     * @param params array of needed parameters for the query
+     * @return List of JavaBean objects
+     * @throws HospitalException
+     */
     public List<Type> executeQuery(String query, Object[] params) throws HospitalException {
         try {
             PreparedStatement stmt = getConnection().prepareStatement(query);
