@@ -82,6 +82,13 @@ public class HistoryDaoSQLImpl extends AbstractDao<History> implements HistoryDa
         }
     }
 
+    /**
+     * Method that lets you search the Histories table for
+     * the records that were given by the given doctor
+     * @param doctor doctor whose histories you are searching
+     * @return List of Histories that were given by the given doctor
+     */
+
     @Override
     public List<History> searchByDoctor(Doctor doctor) {
         try {
@@ -91,6 +98,12 @@ public class HistoryDaoSQLImpl extends AbstractDao<History> implements HistoryDa
         }
     }
 
+    /**
+     * Method that lets you s
+     * @param doctor doctor whose history you are searching
+     * @param patient patient whose history you are searching
+     * @return
+     */
     @Override
     public List<History> searchByDoctorAndPatient(Doctor doctor, Patient patient) {
         try {
