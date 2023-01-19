@@ -11,12 +11,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+
+/**
+ * DoctorDaoSqlImpl is the class that contains all the methods that are needed
+ * to work with the Doctors table in the database
+ */
 public class DoctorDaoSQLImpl extends AbstractDao<Doctor> implements DoctorDao{
 
     private static DoctorDaoSQLImpl instance = null;
     private DoctorDaoSQLImpl() {
         super("Doctors");
     }
+
 
     public static DoctorDaoSQLImpl getInstance(){
         if(instance == null)
