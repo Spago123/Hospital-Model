@@ -12,6 +12,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * HistoryDaoSqlImpl is the class that contains all the methods that are needed
+ * to work with the Histories table in the database
+ */
+
 public class HistoryDaoSQLImpl extends AbstractDao<History> implements HistoryDao{
 
     private static HistoryDaoSQLImpl instance = null;
