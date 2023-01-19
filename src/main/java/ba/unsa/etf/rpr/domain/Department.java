@@ -3,7 +3,7 @@ package ba.unsa.etf.rpr.domain;
 import java.util.Objects;
 
 /**
- * Department Java Bean
+ * Department is a JavaBean which represents an entity that exists in the Data Base
  */
 public class Department implements Idable {
     private int id;
