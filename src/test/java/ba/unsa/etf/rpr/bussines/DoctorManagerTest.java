@@ -1,11 +1,8 @@
 package ba.unsa.etf.rpr.bussines;
 
-import ba.unsa.etf.rpr.dao.DepartmentDaoSQLImpl;
 import ba.unsa.etf.rpr.dao.DoctorDaoSQLImpl;
-import ba.unsa.etf.rpr.domain.Department;
 import ba.unsa.etf.rpr.domain.Doctor;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -96,7 +93,7 @@ public class DoctorManagerTest {
 
         HospitalException hospitalException = Assertions.assertThrows(HospitalException.class, () -> doctorManager.add(doctor),
                 "Doctor already exists");
-        Assert.assertEquals("Doctor already exists", hospitalException.getMessage());
+        Assertions.assertEquals("Doctor already exists", hospitalException.getMessage());
     }
 
 }
