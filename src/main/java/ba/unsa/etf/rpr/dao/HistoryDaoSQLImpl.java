@@ -33,6 +33,14 @@ public class HistoryDaoSQLImpl extends AbstractDao<History> implements HistoryDa
             instance = new HistoryDaoSQLImpl();
         return instance;
     }
+
+    /**
+     * Method that converts a record from the Histories table
+     * to a History JavaBean
+     * @param rs - result set from database
+     * @return History JavaBean
+     * @throws HospitalException
+     */
     @Override
     public History row2object(ResultSet rs) throws HospitalException {
         try{
