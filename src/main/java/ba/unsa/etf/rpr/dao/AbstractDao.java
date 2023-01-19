@@ -26,6 +26,9 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
         createConnection();
     }
 
+    /**
+     * Static method which creates the connection to the Data Base
+     */
     private static void createConnection(){
         if(AbstractDao.connection==null) {
             try {
