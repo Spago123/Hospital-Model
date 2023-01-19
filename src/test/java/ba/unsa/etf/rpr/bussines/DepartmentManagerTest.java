@@ -17,6 +17,9 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 
+/**
+ * Tests for DepartmentManager class
+ */
 public class DepartmentManagerTest {
 
     private DepartmentManager departmentManager;
@@ -69,8 +72,10 @@ public class DepartmentManagerTest {
         this.departmentList = departmentList;
     }
 
-
-
+    /**
+     * Testing add method
+     * @throws HospitalException
+     */
     @Test
     public void addDepartment() throws HospitalException {
         MockedStatic<DaoFactory> daoFactoryMockedStatic = Mockito.mockStatic(DaoFactory.class);
@@ -93,6 +98,10 @@ public class DepartmentManagerTest {
 
     }
 
+    /**
+     * Testing delete method
+     * @throws HospitalException
+     */
     @Disabled
     public void deleteDepartment() throws HospitalException {
         when(departmentManager.getAll()).thenReturn(departmentList);
@@ -104,6 +113,10 @@ public class DepartmentManagerTest {
         Mockito.verify(departmentManager).delete(deleteDepartment.getId());
     }
 
+    /**
+     * Testing add method but the department already exists
+     * @throws HospitalException
+     */
     @Test
     void addAlreadyExisting() throws HospitalException {
         when(departmentManager.getAll()).thenReturn(departmentList);
