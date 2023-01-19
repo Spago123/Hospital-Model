@@ -24,6 +24,7 @@ public class DoctorManagerTest {
     @BeforeEach
     public void initializeObjects() throws HospitalException {
         departmentManagerTest = new DepartmentManagerTest();
+        departmentManagerTest.initializeObjects();
         doctorManager = Mockito.mock(DoctorManager.class);
         doctorDaoSQLMock = Mockito.mock(DoctorDaoSQLImpl.class);
 
