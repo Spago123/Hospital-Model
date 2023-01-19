@@ -34,6 +34,14 @@ public class DepartmentDaoSQLImpl extends AbstractDao<Department> implements Dep
         if(instance!=null)
             instance = null;
     }
+
+    /**
+     * Method that converts an entity from the department table to
+     * a Department JavaBean
+     * @param rs - result set from database
+     * @return Department JavaBean
+     * @throws HospitalException
+     */
     @Override
     public Department row2object(ResultSet rs) throws HospitalException {
         try{
