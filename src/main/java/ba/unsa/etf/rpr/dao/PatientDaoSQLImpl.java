@@ -71,6 +71,12 @@ public class PatientDaoSQLImpl extends AbstractDao<Patient> implements PatientDa
         return row;
     }
 
+    /**
+     * Method that lets you search the Patients table
+     * for patients who have the specified doctor
+     * @param doctor doctor whose patients you are searching
+     * @return list od patients who have the given doctor as doctor
+     */
     @Override
     public List<Patient> searchByDoctor(Doctor doctor) {
         try {
