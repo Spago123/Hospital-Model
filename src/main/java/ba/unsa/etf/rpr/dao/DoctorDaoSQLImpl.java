@@ -71,6 +71,12 @@ public class DoctorDaoSQLImpl extends AbstractDao<Doctor> implements DoctorDao{
         return item;
     }
 
+    /**
+     * Method that lets us search the Doctor table for
+     * those doctors whose Department name is equal to the given name
+     * @param department department name
+     * @return List of doctors who belong to the wanted department
+     */
     @Override
     public List<Doctor> searchByDepartment(Department department) {
         try {
