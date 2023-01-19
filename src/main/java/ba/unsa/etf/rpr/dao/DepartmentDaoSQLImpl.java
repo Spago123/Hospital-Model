@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * DepartmentDaoSqlImpl is the class that contains all the methods that are needed
+ * to work with the Department table in the database
+ */
 public class DepartmentDaoSQLImpl extends AbstractDao<Department> implements DepartmentDao{
 
     private static DepartmentDaoSQLImpl instance = null;
