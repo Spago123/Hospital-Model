@@ -141,6 +141,11 @@ public abstract class AbstractDao<Type extends Idable> implements Dao<Type> {
         }
     }
 
+    /**
+     * Method that deletes a record from the Data Base
+     * @param id - primary key of entity
+     * @throws HospitalException
+     */
     public void delete(int id) throws HospitalException {
         String sql = "DELETE FROM " + tableName + " WHERE id = ?";
         try{
