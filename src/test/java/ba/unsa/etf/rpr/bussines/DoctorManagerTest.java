@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Tests for DoctorManager class
+ */
 public class DoctorManagerTest {
-
     private DoctorManager doctorManager;
     private Doctor doctor;
     private DoctorDaoSQLImpl doctorDaoSQLMock;
@@ -67,6 +69,10 @@ public class DoctorManagerTest {
         this.doctors = doctors;
     }
 
+    /**
+     * Testing the add method
+     * @throws HospitalException
+     */
     @Test
     public void addDoctor() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
@@ -77,6 +83,10 @@ public class DoctorManagerTest {
         Mockito.verify(doctorManager).add(doctor);
     }
 
+    /**
+     * Testing the delete method
+     * @throws HospitalException
+     */
     @Test
     public void deleteDoctor() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
@@ -87,6 +97,10 @@ public class DoctorManagerTest {
         Mockito.verify(doctorManager).delete(doctor.getId());
     }
 
+    /**
+     * Testing add method, but now we are adding a doctor that already exists
+     * @throws HospitalException
+     */
     @Test
     public void addAlreadyExisting() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
