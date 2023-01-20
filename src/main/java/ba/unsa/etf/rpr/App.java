@@ -80,74 +80,81 @@ public class App {
 
 
 
-    public static void main(String[] args ) throws HospitalException, ParseException {
-        Options options = addOptions();
-        CommandLineParser commandLineParser = new DefaultParser();
-        CommandLine commandLine = commandLineParser.parse(options, args);
-
+    public static void main(String[] args ){
         while(true) {
-            if (commandLine.hasOption(showDepartments.getOpt()) || commandLine.hasOption(showDepartments.getLongOpt())) {
-                DepartmentManager departmentManager = new DepartmentManager();
-                System.out.println(departmentManager.getAll());
-            } else if (commandLine.hasOption(addDepartment.getOpt()) || commandLine.hasOption(addDepartment.getLongOpt())) {
-                DepartmentManager departmentManager = new DepartmentManager();
-                departmentManager.add(new Department(1, commandLine.getArgList().get(1)));
-            } else if (commandLine.hasOption(deleteDepartment.getOpt()) || commandLine.hasOption(deleteDepartment.getLongOpt())) {
-                DepartmentManager departmentManager = new DepartmentManager();
-                departmentManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
-            } else if (commandLine.hasOption(showDoctors.getOpt()) || commandLine.hasOption(showDoctors.getLongOpt())) {
-                DoctorManager doctorManager = new DoctorManager();
-                System.out.println(doctorManager.getAll());
-            } else if (commandLine.hasOption(addDoctor.getOpt()) || commandLine.hasOption(addDoctor.getLongOpt())) {
-                DoctorManager doctorManager = new DoctorManager();
-                DepartmentManager departmentManager = new DepartmentManager();
-                List<Department> department = departmentManager.getByName(commandLine.getArgList().get(3));
-                if (department.size() == 0) {
-                    System.out.println("Department with name " + commandLine.getArgList().get(3) + " does not exists");
-                } else if (department.size() != 0) {
-                    doctorManager.add(new Doctor(1, commandLine.getArgList().get(1), commandLine.getArgList().get(2), department.get(0)));
-                    System.out.println("You've successfully added a new Doctor");
+            try {
+                Options options = addOptions();
+                CommandLineParser commandLineParser = new DefaultParser();
+                CommandLine commandLine = commandLineParser.parse(options, args);
+
+
+                if (commandLine.hasOption(showDepartments.getOpt()) || commandLine.hasOption(showDepartments.getLongOpt())) {
+                    DepartmentManager departmentManager = new DepartmentManager();
+                    System.out.println(departmentManager.getAll());
+                } else if (commandLine.hasOption(addDepartment.getOpt()) || commandLine.hasOption(addDepartment.getLongOpt())) {
+                    DepartmentManager departmentManager = new DepartmentManager();
+                    departmentManager.add(new Department(1, commandLine.getArgList().get(1)));
+                } else if (commandLine.hasOption(deleteDepartment.getOpt()) || commandLine.hasOption(deleteDepartment.getLongOpt())) {
+                    DepartmentManager departmentManager = new DepartmentManager();
+                    departmentManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
+                } else if (commandLine.hasOption(showDoctors.getOpt()) || commandLine.hasOption(showDoctors.getLongOpt())) {
+                    DoctorManager doctorManager = new DoctorManager();
+                    System.out.println(doctorManager.getAll());
+                } else if (commandLine.hasOption(addDoctor.getOpt()) || commandLine.hasOption(addDoctor.getLongOpt())) {
+                    DoctorManager doctorManager = new DoctorManager();
+                    DepartmentManager departmentManager = new DepartmentManager();
+                    List<Department> department = departmentManager.getByName(commandLine.getArgList().get(3));
+                    if (department.size() == 0) {
+                        System.out.println("Department with name " + commandLine.getArgList().get(3) + " does not exists");
+                    } else if (department.size() != 0) {
+                        doctorManager.add(new Doctor(1, commandLine.getArgList().get(1), commandLine.getArgList().get(2), department.get(0)));
+                        System.out.println("You've successfully added a new Doctor");
+                    }
+                } else if (commandLine.hasOption(deleteDoctor.getOpt()) || commandLine.hasOption(deleteDoctor.getLongOpt())) {
+                    DoctorManager doctorManager = new DoctorManager();
+                    doctorManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
+                } else if (commandLine.hasOption(showPatients.getOpt()) || commandLine.hasOption(showPatients.getLongOpt())) {
+                    PatientManager patientManager = new PatientManager();
+                    System.out.println(patientManager.getAll());
+                } else if (commandLine.hasOption(addPatient.getOpt()) || commandLine.hasOption(addPatient.getLongOpt())) {
+                    PatientManager patientManager = new PatientManager();
+                    DoctorManager doctorManager = new DoctorManager();
+                    Doctor doctor = doctorManager.getById(Integer.parseInt(commandLine.getArgList().get(4)));
+                    if (doctor == null) {
+                        System.out.println("Doctor does not exists");
+                    } else if (doctor != null) {
+                        patientManager.add(new Patient(1, commandLine.getArgList().get(1), commandLine.getArgList().get(2),
+                                Long.parseLong(commandLine.getArgList().get(3)), doctor));
+                        System.out.println("You've successfully added a new Patient");
+                    }
+                } else if (commandLine.hasOption(deletePatient.getOpt()) || commandLine.hasOption(deletePatient.getLongOpt())) {
+                    PatientManager patientManager = new PatientManager();
+                    patientManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
+                } else if (commandLine.hasOption(showHistories.getOpt()) || commandLine.hasOption(showHistories.getLongOpt())) {
+                    DiagnosisManager diagnosisManager = new DiagnosisManager();
+                    System.out.println(diagnosisManager.getAll());
+                } else if (commandLine.hasOption(addHistory.getOpt()) || commandLine.hasOption(addHistory.getLongOpt())) {
+                    PatientManager patientManager = new PatientManager();
+                    DoctorManager doctorManager = new DoctorManager();
+                    DiagnosisManager diagnosisManager = new DiagnosisManager();
+                    Doctor doctor = doctorManager.getById(Integer.parseInt(commandLine.getArgList().get(2)));
+                    Patient patient = patientManager.getById(Integer.parseInt(commandLine.getArgList().get(1)));
+                    if (doctor == null || patient == null) {
+                        System.out.println("Doctor or patient does not exists");
+                    } else if (doctor != null || patient != null) {
+                        diagnosisManager.add(new History(1, patient, doctor, commandLine.getArgList().get(3)));
+                        System.out.println("You've successfully added a new History");
+                    }
+                } else if (commandLine.hasOption(deleteHistory.getOpt()) || commandLine.hasOption(deleteHistory.getLongOpt())) {
+                    DiagnosisManager diagnosisManager = new DiagnosisManager();
+                    diagnosisManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
+                } else {
+                    printFormattedOptions(options);
                 }
-            } else if (commandLine.hasOption(deleteDoctor.getOpt()) || commandLine.hasOption(deleteDoctor.getLongOpt())) {
-                DoctorManager doctorManager = new DoctorManager();
-                doctorManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
-            } else if (commandLine.hasOption(showPatients.getOpt()) || commandLine.hasOption(showPatients.getLongOpt())) {
-                PatientManager patientManager = new PatientManager();
-                System.out.println(patientManager.getAll());
-            } else if (commandLine.hasOption(addPatient.getOpt()) || commandLine.hasOption(addPatient.getLongOpt())) {
-                PatientManager patientManager = new PatientManager();
-                DoctorManager doctorManager = new DoctorManager();
-                Doctor doctor = doctorManager.getById(Integer.parseInt(commandLine.getArgList().get(4)));
-                if (doctor == null) {
-                    System.out.println("Doctor does not exists");
-                } else if (doctor != null) {
-                    patientManager.add(new Patient(1, commandLine.getArgList().get(1), commandLine.getArgList().get(2),
-                            Long.parseLong(commandLine.getArgList().get(3)), doctor));
-                    System.out.println("You've successfully added a new Patient");
-                }
-            } else if (commandLine.hasOption(deletePatient.getOpt()) || commandLine.hasOption(deletePatient.getLongOpt())) {
-                PatientManager patientManager = new PatientManager();
-                patientManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
-            } else if (commandLine.hasOption(showHistories.getOpt()) || commandLine.hasOption(showHistories.getLongOpt())) {
-                DiagnosisManager diagnosisManager = new DiagnosisManager();
-                System.out.println(diagnosisManager.getAll());
-            } else if (commandLine.hasOption(addHistory.getOpt()) || commandLine.hasOption(addHistory.getLongOpt())) {
-                PatientManager patientManager = new PatientManager();
-                DoctorManager doctorManager = new DoctorManager();
-                DiagnosisManager diagnosisManager = new DiagnosisManager();
-                Doctor doctor = doctorManager.getById(Integer.parseInt(commandLine.getArgList().get(2)));
-                Patient patient = patientManager.getById(Integer.parseInt(commandLine.getArgList().get(1)));
-                if (doctor == null || patient == null) {
-                    System.out.println("Doctor or patient does not exists");
-                } else if (doctor != null || patient != null) {
-                    diagnosisManager.add(new History(1, patient, doctor, commandLine.getArgList().get(3)));
-                    System.out.println("You've successfully added a new History");
-                }
-            } else if (commandLine.hasOption(deleteHistory.getOpt()) || commandLine.hasOption(deleteHistory.getLongOpt())) {
-                DiagnosisManager diagnosisManager = new DiagnosisManager();
-                diagnosisManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
-            } else {
-                printFormattedOptions(options);
+            } catch (ParseException pe) {
+                System.out.println(pe.getMessage());
+            } catch (Exception pe) {
+                System.out.println(pe.getMessage());
             }
         }
     }
