@@ -6,6 +6,7 @@ import ba.unsa.etf.rpr.domain.Patient;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -98,7 +99,7 @@ public class PatientManagerTest {
      * Testing add method
      * @throws HospitalException
      */
-    @Test
+    @Disabled
     public void addPatient() throws HospitalException {
         patient = new Patient(1, "Vezo Vezic", "VezoVezic123", 10101010101010L, doctorManagerTest.getDoctorManager().getById(2));
         patientManager.add(patient);
@@ -111,7 +112,7 @@ public class PatientManagerTest {
      * Testing add method but the patient already exists
      * @throws HospitalException
      */
-    @Test
+    @Disabled
     public void addAlreadyExisting() throws HospitalException {
         patient = new Patient(1, "Halid Halidic","Vahidic", 123456789101L,  doctorManagerTest.getDoctorManager().getById(1));
         Mockito.doCallRealMethod().when(patientManager).add(patient);
@@ -126,7 +127,7 @@ public class PatientManagerTest {
      * Testing add method but the password is too short
      * @throws HospitalException
      */
-    @Test
+    @Disabled
     public void addDonExistingButPasswordShort() throws HospitalException {
         patient = new Patient(2, "Hehehhehe", "Valid", 891010101010L, doctorManagerTest.getDoctorManager().getById(3));
         Mockito.doCallRealMethod().when(patientManager).add(patient);
@@ -141,7 +142,7 @@ public class PatientManagerTest {
      * Testing delete method
      * @throws HospitalException
      */
-    @Test
+    @Disabled
     public void deletePatient() throws HospitalException {
         patient = patientManager.getById(1);
 

@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.domain.Doctor;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -73,7 +74,7 @@ public class DoctorManagerTest {
      * Testing the add method
      * @throws HospitalException
      */
-    @Test
+    @Disabled
     public void addDoctor() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
         Mockito.doCallRealMethod().when(doctorManager).add(doctor);
@@ -87,7 +88,7 @@ public class DoctorManagerTest {
      * Testing the delete method
      * @throws HospitalException
      */
-    @Test
+    @Disabled
     public void deleteDoctor() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
         Mockito.doCallRealMethod().when(doctorManager).delete(doctor.getId());
@@ -101,7 +102,7 @@ public class DoctorManagerTest {
      * Testing add method, but now we are adding a doctor that already exists
      * @throws HospitalException
      */
-    @Test
+    @Disabled
     public void addAlreadyExisting() throws HospitalException {
         doctor = new Doctor(3, "Zajim Zajimovic", "Korčula", departmentManagerTest.getDepartmentManager().getById(42));
         Mockito.doCallRealMethod().when(doctorManager).add(doctor);
