@@ -7,6 +7,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.layout.HBox;
 
+/**
+ * Class that specifies the design of the button inside the table
+ * @param <T>
+ */
 public class OneButtonTableCell<T> extends TableCell<T, T> {
 
     private Button view;
