@@ -14,6 +14,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Class that handles the input on the view history view
+ * @param <Type> that implements the passwordabel interface
+ */
 public class ViewHistoryController<Type extends Passwordabel> {
 
     private Type user;
@@ -37,6 +41,11 @@ public class ViewHistoryController<Type extends Passwordabel> {
         diagnosis.setText(history.getDiagnosis());
     }
 
+    /**
+     * Method that exits the window
+     * @param actionEvent on exit button pressed
+     * @throws IOException
+     */
     public void exitButton(ActionEvent actionEvent) throws IOException {
         System.out.println("dao");
         if(user.getClass().getName().equals("ba.unsa.etf.rpr.domain.Patient")) {
