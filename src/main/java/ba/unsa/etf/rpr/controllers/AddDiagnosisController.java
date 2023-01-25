@@ -12,6 +12,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * AddDiagnosis controller is a class that handles the input in add diagnosis view
+ */
 public class AddDiagnosisController {
 
     private Doctor doctor;
@@ -35,6 +38,11 @@ public class AddDiagnosisController {
         patientName.setText(patient.getName());
     }
 
+    /**
+     * Method that saves the exits the current window and saves the new diagnosis to the datasase
+     * @param actionEvent save button presses
+     * @throws HospitalException
+     */
     @FXML
     private void save(ActionEvent actionEvent) throws HospitalException {
         History newHistory = new History(1, patient, doctor, diagnosis.getText());
@@ -43,6 +51,10 @@ public class AddDiagnosisController {
         new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", doctorHomeController, (Stage) save.getScene().getWindow());
     }
 
+    /**
+     * Method that exits the current window without saving any changes to the database
+     * @param actionEvent exit button pressed
+     */
     @FXML
     private void exit(ActionEvent actionEvent) {
         DoctorHomeController doctorHomeController = new DoctorHomeController(doctor);
