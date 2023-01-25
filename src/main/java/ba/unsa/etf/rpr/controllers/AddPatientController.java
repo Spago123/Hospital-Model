@@ -10,6 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * AddPatientController is a class that models the input on the addPatient window
+ */
 public class AddPatientController {
 
     private Doctor doctor;
@@ -32,10 +35,18 @@ public class AddPatientController {
 
     }
 
+    /**
+     * Method that exits the current window
+     * @param actionEvent exit button pressed
+     */
     public void exitBtn(javafx.event.ActionEvent actionEvent) {
         new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
     }
 
+    /**
+     * Method that exits te current window and adds a patient to the database
+     * @param actionEvent add button pressed
+     */
     public void addBtn(javafx.event.ActionEvent actionEvent) {
         try {
             patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), Long.parseLong(patientsUIN.getText()), doctor));
