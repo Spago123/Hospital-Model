@@ -152,7 +152,7 @@ public class App {
                     printFormattedOptions(options);
                 }
             } catch (ParseException pe) {
-                System.out.println(pe.getMessage());
+                System.out.println("Problems while entering data");
             } catch (Exception pe) {
                 System.out.println(pe.getMessage());
             }
