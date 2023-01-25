@@ -13,8 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
- * Ovo radi samo jos povezivanje
- * @param <Type>
+ * EditPassword is a controller that models the input on the editPassword view
+ * @param <Type> that implements Passwordabel interface
  */
 
 public class EditPasswordController<Type extends Passwordabel> {
@@ -39,6 +39,10 @@ public class EditPasswordController<Type extends Passwordabel> {
         newPass.setOnKeyPressed((EnterKeyBoard) (event) -> save(event));
     }
 
+    /**
+     * Method that exits the window and saves the new password of the user
+     * @param actionEvent on save button pressed
+     */
     public void save(ActionEvent actionEvent){
         if(StuffManager.verifyPassword(newPass.getText())) {
             try {
@@ -60,10 +64,17 @@ public class EditPasswordController<Type extends Passwordabel> {
         }
     }
 
+    /**
+     * Method that exits the window and does now save the changes to the databse
+     * @param actionEvent
+     */
     public void exit(ActionEvent actionEvent) {
         closeWindow();
     }
 
+    /**
+     * Method that closes the window
+     */
     private void closeWindow(){
        if(ifPatient()){
             PatientHomeController patientHomeController = new PatientHomeController((Patient) user);
