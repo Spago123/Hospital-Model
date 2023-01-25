@@ -13,6 +13,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+/**
+ * Class that handles the input on the patientHome view
+ */
 public class PatientHomeController {
 
     private Patient patient;
@@ -36,6 +39,9 @@ public class PatientHomeController {
         this.patient = patient;
     }
 
+    /**
+     * Here we fill the javaFx components with required data
+     */
     public void initialize(){
         welcomeName.setText(patient.getName());
         patientUIN.setText(String.valueOf(patient.getUIN()));
@@ -55,11 +61,18 @@ public class PatientHomeController {
         updateHistories();
     }
 
+    /**
+     * Method that updates the diagnosis table
+     */
     private void updateHistories() {
         patientDiagnosisView.setItems(FXCollections.observableList(diagnosisManager.getByPatient(patient)));
         patientDiagnosisView.refresh();
     }
 
+    /**
+     * Method that is being called when we press the view button in the diagnosis table
+     * @param historyId
+     */
     private void showHistoryScene(int historyId) {
         try {
             ViewHistoryController viewHistoryController = new ViewHistoryController<Patient>(diagnosisManager.getById(historyId), patient);
@@ -69,6 +82,11 @@ public class PatientHomeController {
         }
     }
 
+
+    /**
+     * Method that is being called when we want to edit our password
+     * @param actionEvent on edit button pressed
+     */
     public void editPersonalInfo(ActionEvent actionEvent) {
         EditPasswordController editPasswordController = new EditPasswordController<Patient>(patient);
         new OpenNewWindow<>().openDialog("editPass", "/fxml/editPass.fxml", editPasswordController, (Stage) patientUIN.getScene().getWindow());
