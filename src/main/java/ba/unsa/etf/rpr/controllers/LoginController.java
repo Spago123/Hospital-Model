@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+/**
+ * Class that models our work with the login view
+ */
 public class LoginController {
 
     private PatientManager patientManager = new PatientManager();
@@ -43,6 +46,10 @@ public class LoginController {
         password.setOnKeyPressed((EnterKeyBoard)(event) -> login(event));
     }
 
+    /**
+     * Method that verifies the given username and password
+     * @param actionEvent on login button pressed
+     */
     @FXML
     private void login(ActionEvent actionEvent) {
         try {
