@@ -18,6 +18,9 @@ import javafx.stage.Stage;
 
 import javax.print.Doc;
 
+/**
+ * Class that models the inputs on the doctorHome view
+ */
 public class DoctorHomeController {
 
     private Doctor doctor;
@@ -46,7 +49,10 @@ public class DoctorHomeController {
         this.doctor = doctor;
     }
 
-
+    /**
+     * Here we fill the required javaFx elements wih data
+     * @throws HospitalException
+     */
     @FXML
     private void initialize() throws HospitalException {
 
@@ -77,8 +83,10 @@ public class DoctorHomeController {
         refreshDiagnosis();
     }
 
-
-
+    /**
+     * Method that is being called when the button in the all diagnosis tab is pressed
+     * @param historyId
+     */
     private void showHistory(int historyId) {
         try {
             ViewHistoryController viewHistoryController = new ViewHistoryController<Doctor>(diagnosisManager.getById(historyId), doctor);
@@ -88,6 +96,10 @@ public class DoctorHomeController {
         }
     }
 
+    /**
+     * Method that is being called when the add new diagnosis button is pressed in my patients tab
+     * @param patientId whom we are adding a new diagnosis
+     */
     private void addNewDiagnosis(int patientId) {
         try {
             AddDiagnosisController addDiagnosisController = new AddDiagnosisController(patientManager.getById(patientId), doctor);
