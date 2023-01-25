@@ -109,21 +109,36 @@ public class DoctorHomeController {
         }
     }
 
+    /**
+     * Method that refreshes the patients table pn the havaFX screen in my patients tab
+     * @throws HospitalException
+     */
     private void refreshPatients() throws HospitalException {
         myPatients.setItems(FXCollections.observableList(patientManager.getByDoctor(doctor)));
         myPatients.refresh();
     }
 
+    /**
+     * Method that refreshes diagnosis table on the javaFX window in my diagnosis tab
+     */
     private void refreshDiagnosis(){
         myDiagnosis.setItems(FXCollections.observableList(diagnosisManager.getByDoctor(doctor)));
         myDiagnosis.refresh();
     }
 
+    /**
+     * Method that adds a new patient to the database
+     * @param actionEvent addPatient button pressed
+     */
     public void addPatient(ActionEvent actionEvent){
         AddPatientController addPatientController = new AddPatientController(doctor);
         new OpenNewWindow<>().openDialog("addPatient", "/fxml/addPatient.fxml", addPatientController, (Stage) myDiagnosis.getScene().getWindow());
     }
 
+    /**
+     * Method that lets the doctor edit his/her info
+     * @param actionEvent edit button pressed
+     */
     public void edit(ActionEvent actionEvent) {
         EditPasswordController editPasswordController = new EditPasswordController<Doctor>(doctor);
         new OpenNewWindow<>().openDialog("editPass", "/fxml/editPass.fxml", editPasswordController, (Stage) myDiagnosis.getScene().getWindow());
