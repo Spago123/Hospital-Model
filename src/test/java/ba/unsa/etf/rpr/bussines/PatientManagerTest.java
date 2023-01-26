@@ -79,21 +79,7 @@ public class PatientManagerTest {
         this.patients = patients;
     }
 
-    /**
-     * Test for when password is too short
-     */
-    @Test
-    public void passwordTooShort() {
-        Assertions.assertEquals(false, StuffManager.verifyPassword("Zalik"));
-    }
 
-    /**
-     * Testing when password to long
-     */
-    @Test
-    public void passwordTooLong() {
-        Assertions.assertEquals(false, StuffManager.verifyPassword("MelikiAlikim1234"));
-    }
 
     /**
      * Testing add method

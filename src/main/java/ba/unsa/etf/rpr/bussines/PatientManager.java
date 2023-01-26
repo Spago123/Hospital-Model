@@ -53,6 +53,9 @@ public class PatientManager implements Manager<Patient>{
     @Override
     public void add(Patient item) throws HospitalException {
 
+        if (!StuffManager.checkUIN(String.valueOf(item.getUIN())))
+            throw new HospitalException("UIN is not valid");
+
         if(!StuffManager.verifyPassword(item.getPassword()))
             throw new HospitalException("Password should be between 7 and 15 letters long!");
 

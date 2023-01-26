@@ -107,13 +107,23 @@ public class App {
                     DoctorManager doctorManager = new DoctorManager();
                     System.out.println(doctorManager.getAll());
                 } else if (commandLine.hasOption(addDoctor.getOpt()) || commandLine.hasOption(addDoctor.getLongOpt())) {
+                    String name , pass, depName;
+                    if(commandLine.getArgList().size() == 4){
+                        name = commandLine.getArgList().get(0) + " " + commandLine.getArgList().get(1);
+                        pass = commandLine.getArgList().get(2);
+                        depName = commandLine.getArgList().get(3);
+                    } else {
+                        name = commandLine.getArgList().get(0);
+                        pass = commandLine.getArgList().get(1);
+                        depName = commandLine.getArgList().get(2);
+                    }
                     DoctorManager doctorManager = new DoctorManager();
                     DepartmentManager departmentManager = new DepartmentManager();
-                    List<Department> department = departmentManager.getByName(commandLine.getArgList().get(2));
+                    List<Department> department = departmentManager.getByName(depName);
                     if (department.size() == 0) {
-                        System.out.println("Department with name " + commandLine.getArgList().get(3) + " does not exists");
+                        System.out.println("Department with name " + depName + " does not exists");
                     } else if (department.size() != 0) {
-                        doctorManager.add(new Doctor(1, commandLine.getArgList().get(0), commandLine.getArgList().get(1), department.get(0)));
+                        doctorManager.add(new Doctor(1, name, pass, department.get(0)));
                         System.out.println("You've successfully added a new Doctor");
                     }
                 } else if (commandLine.hasOption(deleteDoctor.getOpt()) || commandLine.hasOption(deleteDoctor.getLongOpt())) {
@@ -123,14 +133,28 @@ public class App {
                     PatientManager patientManager = new PatientManager();
                     System.out.println(patientManager.getAll());
                 } else if (commandLine.hasOption(addPatient.getOpt()) || commandLine.hasOption(addPatient.getLongOpt())) {
+                    String name, pass;
+                    Long UIN;
+                    int id;
+                    if(commandLine.getArgList().size() == 5){
+                        name = commandLine.getArgList().get(0) + " " + commandLine.getArgList().get(1);
+                        pass = commandLine.getArgList().get(2);
+                        UIN = Long.parseLong(commandLine.getArgList().get(3));
+                        id = Integer.parseInt(commandLine.getArgList().get(4));
+                    } else {
+                        name = commandLine.getArgList().get(0) + " " + commandLine.getArgList().get(1);
+                        pass = commandLine.getArgList().get(2);
+                        UIN = Long.parseLong(commandLine.getArgList().get(3));
+                        id = Integer.parseInt(commandLine.getArgList().get(4));
+                    }
                     PatientManager patientManager = new PatientManager();
                     DoctorManager doctorManager = new DoctorManager();
-                    Doctor doctor = doctorManager.getById(Integer.parseInt(commandLine.getArgList().get(3)));
+                    Doctor doctor = doctorManager.getById(id);
                     if (doctor == null) {
                         System.out.println("Doctor does not exists");
                     } else if (doctor != null) {
-                        patientManager.add(new Patient(1, commandLine.getArgList().get(0), commandLine.getArgList().get(1),
-                                Long.parseLong(commandLine.getArgList().get(2)), doctor));
+                        patientManager.add(new Patient(1, name, pass,
+                                UIN, doctor));
                         System.out.println("You've successfully added a new Patient");
                     }
                 } else if (commandLine.hasOption(deletePatient.getOpt()) || commandLine.hasOption(deletePatient.getLongOpt())) {

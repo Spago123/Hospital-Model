@@ -49,11 +49,18 @@ public class AddPatientController {
      */
     public void addBtn(javafx.event.ActionEvent actionEvent) {
         try {
-            patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), Long.parseLong(patientsUIN.getText()), doctor));
-            new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
+            Long UIN;
+            try {
+                UIN = Long.parseLong(patientsUIN.getText());
+            } catch(Exception e){
+                throw new HospitalException("UIN is not valid");
+            }
+            patientManager.add(new Patient(1, patientsName.getText(), patientsPassword.getText(), UIN, doctor));
         } catch (HospitalException e){
             OpenNewWindow.alert(Alert.AlertType.ERROR, "ERROR!", "Something went wrong",
                     e.getMessage());
+        } finally {
+            new OpenNewWindow().openDialog("doctorHome", "/fxml/doctorHome.fxml", new DoctorHomeController(doctor), (Stage) add.getScene().getWindow());
         }
     }
 }
