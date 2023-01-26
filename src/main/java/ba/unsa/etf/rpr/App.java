@@ -56,7 +56,7 @@ public class App {
     public static void printFormattedOptions(Options options){
         HelpFormatter helpFormatter = new HelpFormatter();
         PrintWriter printWriter = new PrintWriter(System.out);
-        helpFormatter.printUsage(printWriter, 150, "java -jar projekatRPR.jar [option] 'something else if needed' ");
+        helpFormatter.printUsage(printWriter, 150, "java -jar projekatRPR-cli-jar-with-dependencies.jar [option] 'something else if needed' ");
         helpFormatter.printOptions(printWriter, 150, options, 2, 7);
         printWriter.close();
     }
@@ -81,14 +81,16 @@ public class App {
 
 
     public static void main(String[] args ){
-        while(true) {
+
             try {
                 Options options = addOptions();
                 CommandLineParser commandLineParser = new DefaultParser();
                 CommandLine commandLine = commandLineParser.parse(options, args);
 
 
+
                 if (commandLine.hasOption(showDepartments.getOpt()) || commandLine.hasOption(showDepartments.getLongOpt())) {
+                    System.out.println("Hera iam");
                     DepartmentManager departmentManager = new DepartmentManager();
                     System.out.println(departmentManager.getAll());
                 } else if (commandLine.hasOption(addDepartment.getOpt()) || commandLine.hasOption(addDepartment.getLongOpt())) {
@@ -157,5 +159,5 @@ public class App {
                 System.out.println(pe.getMessage());
             }
         }
-    }
+
 }
