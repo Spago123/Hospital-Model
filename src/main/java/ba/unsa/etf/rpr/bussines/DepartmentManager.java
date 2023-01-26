@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.bussines;
 import ba.unsa.etf.rpr.dao.Dao;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Department;
+import ba.unsa.etf.rpr.domain.Doctor;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
 
 import java.util.List;
@@ -41,6 +42,10 @@ public class DepartmentManager implements Manager<Department> {
      */
     @Override
     public void delete(int id) throws HospitalException {
+        Department department = DaoFactory.departmentDao().getById(id);
+        for(Doctor doctor : DaoFactory.doctorDao().searchByDepartment(department)){
+            DaoFactory.doctorDao().delete(doctor.getId());
+        }
         DaoFactory.departmentDao().delete(id);
     }
 

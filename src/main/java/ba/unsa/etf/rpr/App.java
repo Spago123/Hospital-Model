@@ -38,7 +38,9 @@ public class App {
 
     private static final Option addPatient = new Option("addP", "addPatient", false,
             "Adding new patient to database");
-    private static final Option deletePatient = new Option("delP", "deletePatient", false,
+
+
+    private static final Option deletePatient = new Option("delP", "deletePatient", true,
             "Deleting patient from database");
 
     private static final Option showPatients = new Option("showP", "showPatients", false,
@@ -56,12 +58,13 @@ public class App {
     public static void printFormattedOptions(Options options){
         HelpFormatter helpFormatter = new HelpFormatter();
         PrintWriter printWriter = new PrintWriter(System.out);
-        helpFormatter.printUsage(printWriter, 150, "java -jar projekatRPR-cli-jar-with-dependencies.jar [option] 'something else if needed' ");
+        helpFormatter.printUsage(printWriter, 150, "java -jar projekatRPR-cli-jar-with-dependencies.jar [option] 'something else if needed'");
         helpFormatter.printOptions(printWriter, 150, options, 2, 7);
         printWriter.close();
     }
 
     public static Options addOptions() {
+
         Options options = new Options();
         options.addOption(addDepartment);
         options.addOption(deleteDepartment);
@@ -87,7 +90,8 @@ public class App {
                 CommandLineParser commandLineParser = new DefaultParser();
                 CommandLine commandLine = commandLineParser.parse(options, args);
 
-
+                //System.out.println(commandLine.getArgList().get(1));
+                //System.out.println(args);
 
                 if (commandLine.hasOption(showDepartments.getOpt()) || commandLine.hasOption(showDepartments.getLongOpt())) {
                     System.out.println("Hera iam");
@@ -130,8 +134,10 @@ public class App {
                         System.out.println("You've successfully added a new Patient");
                     }
                 } else if (commandLine.hasOption(deletePatient.getOpt()) || commandLine.hasOption(deletePatient.getLongOpt())) {
+                    System.out.println(Integer.parseInt(commandLine.getArgList().get(0)));
                     PatientManager patientManager = new PatientManager();
-                    patientManager.delete(Integer.parseInt(commandLine.getArgList().get(1)));
+                    System.out.println(patientManager.getById(Integer.parseInt(commandLine.getArgList().get(0))));
+                    patientManager.delete(Integer.parseInt(commandLine.getArgList().get(0)));
                 } else if (commandLine.hasOption(showHistories.getOpt()) || commandLine.hasOption(showHistories.getLongOpt())) {
                     DiagnosisManager diagnosisManager = new DiagnosisManager();
                     System.out.println(diagnosisManager.getAll());
