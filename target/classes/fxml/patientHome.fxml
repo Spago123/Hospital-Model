@@ -126,10 +126,10 @@
                <children>
                   <TableView fx:id="patientDiagnosisView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                     <columns>
-                      <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
-                      <TableColumn fx:id="doctor" prefWidth="75.0" text="Doctor" />
-                        <TableColumn fx:id="diagnosis" prefWidth="75.0" text="Diagnosis" />
-                        <TableColumn fx:id="view" prefWidth="75.0" />
+                      <TableColumn fx:id="id" prefWidth="34.399993896484375" text="ID" />
+                      <TableColumn fx:id="doctor" prefWidth="210.4000244140625" text="Doctor" />
+                        <TableColumn fx:id="diagnosis" prefWidth="263.199951171875" text="Diagnosis" />
+                        <TableColumn fx:id="view" prefWidth="92.0" />
                     </columns>
                   </TableView>
                </children>

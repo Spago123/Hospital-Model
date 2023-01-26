@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.bussines;
 
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Doctor;
+import ba.unsa.etf.rpr.domain.History;
 import ba.unsa.etf.rpr.domain.Patient;
 import ba.unsa.etf.rpr.exceptions.HospitalException;
 
@@ -38,7 +39,10 @@ public class PatientManager implements Manager<Patient>{
      */
     @Override
     public void delete(int id) throws HospitalException {
-     DaoFactory.patientDao().delete(id);
+       for(History history : DaoFactory.historyDao().searchByPatient(DaoFactory.patientDao().getById(id))) {
+           DaoFactory.historyDao().delete(history.getId());
+       }
+       DaoFactory.patientDao().delete(id);
     }
 
     /**
